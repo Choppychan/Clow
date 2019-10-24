@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+  <!--Icone-->
+  <script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.11.2/js/v4-shims.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
+
+
+
+  <meta lang="it" charset="utf-8">
+
+  <!--Stile-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+
+
+  <!--Ottimizzazione per il cellulare-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clow</title>
+</head>
+
+<body class="blue-grey darken-4">
+<!--Logo-->
+<p class="heading transparent center grey-text text-lighten-4">CL<i class="fas fa-cloud cloudLogo"></i>W</p>
+
+<!--Ricerca-->
+<div class="row">
+  <div class="col s6 offset-s3">
+    <div class="card-panel teal transparent-white">
+      <input type="text" id="cityName" class="grey-text text-lighten-2" placeholder="Inserisci una città">
+      <button class="waves-effect waves-light btn blue-grey darken-2 grey-text text-lighten-2" onclick="getWeather()">Cerca <i class="fa fa-search"></i></button>
+
+
+      <!--Luogo-->
+      <div class="center-align grey-text text-darken-4">
+        <span class="weatherResponse center"></span>
+        <span class="country"></span>
+      </div>
+      <!--Condizioni meteo-->
+      <div class="center"><i class="weatherMain"></i></div>
+
+
+      <!--Dati-->
+      <table class="highlight hide grey-text text-darken-4" id="temp-table">
+        <tbody class="grey-text text-darken-4">
+        <tr>
+          <td>Temperatura:</td>
+          <td><div class="temp"></div></td>
+        </tr>
+        <tr class="hot-hover">
+          <td>Temperatura massima:</td>
+          <td><div class="tempMax"></div></td>
+        </tr>
+        <tr class="cold-hover">
+          <td>Temperatura minima:</td>
+          <td><div class="tempMin"></div></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<footer class="page-footer transparent-white">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <p class="grey-text text-lighten-2">
+                  Design di <a class="links" href="https://materializecss.com/">Materialize</a><br>
+                  Icone di <a class="links" href="https://fontawesome.com/">Fonticons</a><br>
+                  API di <a class="links" href="https://openweathermap.org">OpenWeather</a><br>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="grey-text text-lighten-2">Links</h5>
+                <ul>
+                  <a href="mailto:s.carmen2101@gmail.com" class="waves-effect waves-light"><i class="far fa-envelope"></i></a>
+                  <a href="https://www.linkedin.com/in/carmenagnesesantoro/?locale=en_US" class="waves-effect waves-light"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.facebook.com/carmen.agnese.santoro" class="waves-effect waves-light"><i class="fab fa-facebook-f"></i></a></li>
+                  <a href="https://www.instagram.com/usagica/" class="waves-effect waves-light"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container grey-text text-lighten-2">
+            © 2019 Carmen Agnese Santoro
+            </div>
+          </div>
+        </footer>
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/clow.js"></script>
+</body>
+</html>
