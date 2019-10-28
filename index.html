@@ -24,78 +24,98 @@
 </head>
 
 <body class="blue-grey darken-4">
-<!--Logo-->
-<p class="heading transparent center grey-text text-lighten-4">CL<i class="fas fa-cloud cloudLogo"></i>W</p>
+  <!--Logo-->
+  <header>
+    <p class="heading transparent center grey-text text-lighten-4">CL<svg class="svg-inline--fa" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+      <defs>
+        <filter id="filter1" x="0" y="0">
+          <feOffset result="offOut" in="SourceGraphic" dx="30" dy="30" />
+          <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+          <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="0" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+      </defs>
+      <path fill="currentColor" d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4z" filter="url(#filter1)"></path>
+    </svg>W</p>
+  </header>
 
-<!--Ricerca-->
-<div class="row">
-  <div class="col s6 offset-s3">
-    <div class="card-panel teal transparent-white">
-      <input type="text" id="cityName" class="grey-text text-lighten-2" placeholder="Inserisci una città">
-      <button class="waves-effect waves-light btn blue-grey darken-2 grey-text text-lighten-2" onclick="getWeather()">Cerca <i class="fa fa-search"></i></button>
+  <main>
+
+    <!--Ricerca-->
+    <div class="row">
+      <div class="col s6 offset-s3">
+        <div class="card-panel teal transparent-white">
+          <div class="input-field">
+            <input type="text" id="cityName" class="autocomplete grey-text text-lighten-2" placeholder="Inserisci una città">
+            <button class="waves-effect waves-light btn blue-grey darken-2 grey-text text-lighten-2" onclick="getWeather()">Cerca <i class="fa fa-search"></i></button>
+          </div>
 
 
-      <!--Luogo-->
-      <div class="center-align grey-text text-darken-4">
-        <span class="weatherResponse center"></span>
-        <span class="country"></span>
+          <!--Luogo-->
+          <div class="center-align grey-text text-darken-4">
+            <span class="weatherResponse center"></span>
+            <span class="country"></span>
+          </div>
+
+          <!--Condizioni meteo-->
+          <div class="center-align grey-text text-darken-4"><i class="weatherMain"></i></div>
+          <div class="center-align grey-text text-darken-4"><i class="weatherDescription"></i></div>
+
+          <!--Dati-->
+          <table class="highlight hide grey-text text-darken-4" id="temp-table">
+            <tbody class="grey-text text-darken-4">
+              <tr>
+                <td>Temperatura:</td>
+                <td><div class="temp"></div></td>
+              </tr>
+              <tr class="hot-hover">
+                <td>Temperatura massima:</td>
+                <td><div class="tempMax"></div></td>
+              </tr>
+              <tr class="cold-hover">
+                <td>Temperatura minima:</td>
+                <td><div class="tempMin"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <!--Condizioni meteo-->
-      <div class="center"><i class="weatherMain"></i></div>
-
-
-      <!--Dati-->
-      <table class="highlight hide grey-text text-darken-4" id="temp-table">
-        <tbody class="grey-text text-darken-4">
-        <tr>
-          <td>Temperatura:</td>
-          <td><div class="temp"></div></td>
-        </tr>
-        <tr class="hot-hover">
-          <td>Temperatura massima:</td>
-          <td><div class="tempMax"></div></td>
-        </tr>
-        <tr class="cold-hover">
-          <td>Temperatura minima:</td>
-          <td><div class="tempMin"></div></td>
-        </tr>
-        </tbody>
-      </table>
     </div>
-  </div>
-</div>
+  </main>
 
-
-<footer class="page-footer transparent-white">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <p class="grey-text text-lighten-2">
-                  Design di <a class="links" href="https://materializecss.com/">Materialize</a><br>
-                  Icone di <a class="links" href="https://fontawesome.com/">Fonticons</a><br>
-                  API di <a class="links" href="https://openweathermap.org">OpenWeather</a><br>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="grey-text text-lighten-2">Links</h5>
-                <ul>
-                  <a href="mailto:s.carmen2101@gmail.com" class="waves-effect waves-light"><i class="far fa-envelope"></i></a>
-                  <a href="https://www.linkedin.com/in/carmenagnesesantoro/?locale=en_US" class="waves-effect waves-light"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="https://www.facebook.com/carmen.agnese.santoro" class="waves-effect waves-light"><i class="fab fa-facebook-f"></i></a></li>
-                  <a href="https://www.instagram.com/usagica/" class="waves-effect waves-light"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-              </div>
-            </div>
+<!--Footer-->
+  <footer class="page-footer transparent-white">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-2">
+            Design di <a class="links" href="https://materializecss.com/">Materialize</a> e <a class="links" href="https://jquery.com">Jquery</a><br>
+            Icone di <a class="links" href="https://fontawesome.com/">Fonticons</a><br>
+            Font di <a class="links" href="https://cooperhewitt.org">Cooper Hewitt Smithsonian Design Museum</a><br>
+            API di <a class="links" href="https://openweathermap.org">OpenWeather</a><br>
           </div>
-          <div class="footer-copyright">
-            <div class="container grey-text text-lighten-2">
-            © 2019 Carmen Agnese Santoro
-            </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="grey-text text-lighten-2">Links</h5>
+            <ul>
+              <a href="mailto:s.carmen2101@gmail.com" class="waves-effect waves-light"><i class="far fa-envelope"></i></a>
+              <a href="https://www.linkedin.com/in/carmenagnesesantoro/?locale=en_US" class="waves-effect waves-light"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/carmen.agnese.santoro" class="waves-effect waves-light"><i class="fab fa-facebook-f"></i></a></li>
+              <a href="https://www.instagram.com/usagica/" class="waves-effect waves-light"><i class="fab fa-instagram"></i></a></li>
+            </ul>
           </div>
-        </footer>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container grey-text text-lighten-2">
+          © 2019 Carmen Agnese Santoro
+        </div>
+      </div>
+    </footer>
 
 
-<!--JavaScript at end of body for optimized loading-->
-<script type="text/javascript" src="js/materialize.js"></script>
-<script type="text/javascript" src="js/clow.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/clow.js"></script>
+  <script type="text/javascript" src="js/cities.js"></script>
 </body>
-</html>
+  </html>

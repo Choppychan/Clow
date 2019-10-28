@@ -4,26 +4,21 @@
 }
 
 @font-face {
-  font-family: 'CooperHewitt-Medium';
-  src: url(../fonts/CooperHewitt-Medium.ttf);
-}
-
-@font-face {
-  font-family: 'CooperHewitt-Thin';
-  src: url(../fonts/CooperHewitt-Thin.ttf);
-
-}
-
-@font-face {
-  font-family: 'CooperHewitt-Book';
-  src: url(../fonts/CooperHewitt-Book.ttf);
-
+	font-family: 'CooperHewitt-Medium';
+	src: url(../fonts/CooperHewitt-Medium.ttf);
 }
 
 body {
- background-size: auto;
- background-repeat: no-repeat;
- font-family: 'CooperHewitt-Medium';
+	background-size: auto;
+	background-repeat: no-repeat;
+	font-family: 'CooperHewitt-Medium';
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
 }
 
 .transparent-white, .page-footer{
@@ -32,24 +27,19 @@ body {
 }
 
 .hot-hover:hover {
-    background-color: rgba(255, 100, 0, 0.3) !important;
+	background-color: rgba(255, 100, 0, 0.3) !important;
 }
 
 .cold-hover:hover {
-    background-color: rgba(0, 220, 255, 0.3) !important;
+	background-color: rgba(0, 220, 255, 0.3) !important;
 }
 
 
-p.heading{
+.heading{
 	font-size: 100px;
-	font-family: "CooperHewitt-Medium";
 	text-shadow: 5px 5px rgba(255, 255, 255, 0.3);
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.cloudLogo{
-	text-shadow: 5px 5px rgba(255, 255, 255, 0.3);
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 input:not([type]):focus:not([readonly]),
@@ -65,13 +55,13 @@ input[type=tel]:not(.browser-default):focus:not([readonly]),
 input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #455a64;
+	border-bottom: 1px solid #455a64;
 	-webkit-box-shadow: 0 1px 0 0 #455a64;
-          box-shadow: 0 1px 0 0 #455a64;
+	box-shadow: 0 1px 0 0 #455a64;
 }
 
 .weatherResponse{
-  font-family: 'CooperHewitt-Bold';
+	font-family: 'CooperHewitt-Bold';
 	font-size: 50px;
 }
 
@@ -79,9 +69,11 @@ textarea.materialize-textarea:focus:not([readonly]) {
 	font-family: 'CooperHewitt-Bold';
 	font-size: 20px;
 }
+
 .weatherMain{
-    font-size: 20px;
+	font-size: 20px;
 }
+
 .fa-envelope, .fa-linkedin-in, .fa-facebook-f, .fa-instagram{
 	font-size: 30px;
 	color: #e0e0e0;
@@ -93,12 +85,14 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 .fa-envelope:hover, .fa-linkedin-in:hover, .fa-facebook-f:hover, .fa-instagram:hover, .links:hover{
-color: #263238;
+	color: #263238;
 }
 
 .page-footer{
-    position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
+	position: relative;
+	margin-top: 10px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 }
