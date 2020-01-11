@@ -26,7 +26,7 @@ function getWeather() {
 
 
   var cityName = $('#cityName').val();
-  var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&appid=20ce837a3f500c892b957257bbc630b8&lang=it';
+  var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&appid=APP_KEY&lang=it';
 
   $.getJSON(apiCall, weatherCallback);
 
