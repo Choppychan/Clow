@@ -1,13 +1,38 @@
+const APP_KEY = 'INSERT-OPENWEATHERMAP-API-KEY-HERE';
+
 $( function() {
   $("#cityName").autocomplete({
     data: window.cities,
     limit: 20,
     minLength: 2,
   });
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){
+      getWeather([position.coords.latitude, position.coords.longitude]);
+    }, function(error){
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+          M.toast({html: 'Richiesta per geolocalizzazione rifiutata', classes: 'red'});
+          break;
+        case error.POSITION_UNAVAILABLE:
+          M.toast({html: 'Informazioni per la localizzazione non disponibili', classes: 'red'});
+          break;
+        case error.TIMEOUT:
+          M.toast({html: 'Richiesta per geolocalizzazione scaduta', classes: 'red'});
+          break;
+        default:
+          M.toast({html: 'Errore sconosciuto per la geolocalizzazione', classes: 'red'});
+          break;
+      }
+    });
+  } else {
+    M.toast({html: 'Geolocalizzazione non supportata da questo browser', classes: 'red'});
+  }
 });
 
 
-function getWeather() {
+function getWeather(coords) {
   var weatherResponse = $('.weatherResponse');
   var weatherMain = $('.weatherMain');
   var weatherDescription = $('.weatherDescription');
@@ -26,7 +51,12 @@ function getWeather() {
 
 
   var cityName = $('#cityName').val();
-  var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&appid=APP_KEY&lang=it';
+  var apiCall = '';
+  if(coords){
+    apiCall = 'http://api.openweathermap.org/data/2.5/weather?lat=' + coords[0] + '&lon=' + coords[1] + '&units=metric&appid=' + APP_KEY + '&lang=it';
+  } else {
+    apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&appid=' + APP_KEY + '&lang=it';
+  }
 
   $.getJSON(apiCall, weatherCallback);
 
